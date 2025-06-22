@@ -19,9 +19,9 @@ public class ProductPage extends LoadableComponent<ProductPage> {
     private final SelenideElement COMMENTS = $x("//*[@data-testid='tabs-item-comments']");
 
     public ProductPage() {
-        this.catalogSearchHeader = new CatalogSearchHeader();
-        this.productCard = new ProductCard();
-        this.sellerCard = new SellerCard();
+        this.catalogSearchHeader = new CatalogSearchHeader<>(page(ShopPage.class));
+        this.productCard = new ProductCard<>(this);
+        this.sellerCard = new SellerCard<>(this);
     }
 
     @Override
