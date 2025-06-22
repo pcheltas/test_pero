@@ -22,11 +22,9 @@ public class ShoppingSection<T extends LoadableComponent<T>> {
     }
 
     public ShoppingSection<T> clickOnMarketTab() {
-        System.out.println("click on market tab fun");
         TAB_MARKET.shouldBe(visible.because("Market tab should be visible to click on it"))
                 .scrollIntoView("{block: 'center'}")
                 .click();
-        System.out.println("click on market tab");
         return this;
     }
 
@@ -38,7 +36,6 @@ public class ShoppingSection<T extends LoadableComponent<T>> {
     }
 
     public T verifyMarketListIsShown() {
-        System.out.println("verifyMarketListIsShown");
         MARKET_LIST.shouldBe(visible.because("Market list should be visible on opened market tab"));
         return page;
     }
